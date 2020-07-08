@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PoemResource;
 use App\Poem;
 
 class PoemsController extends Controller
 {
     public function index()
     {
-        return Poem::all();
+        return PoemResource::collection(Poem::all());
     }
 }
