@@ -13,6 +13,6 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/poems', ['as' => 'poems.index', function () use ($router) {
+    return App\Poem::all();
+}]);

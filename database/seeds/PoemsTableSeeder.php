@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Poem;
 
-class DatabaseSeeder extends Seeder
+class PoemsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
-        $this->call('PoemsTableSeeder');
+        factory(Poem::class, 10)->create();
     }
 }
