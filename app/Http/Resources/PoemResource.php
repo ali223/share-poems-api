@@ -16,12 +16,12 @@ class PoemResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'poet_name' => $this->poet_name,
+            'poetName' => $this->poet_name,
             'content' => $this->content,
-            'image_url' => $this->image_url,
-            'user_id' => $this->user_id,
-            'created_at' => $this->created_at->toISOString(),
-            'updated_at' => $this->created_at->toISOString(),
+            'imageUrl' => $this->image_url,
+            'userId' => $this->user_id,
+            'createdAt' => $this->created_at->toISOString(),
+            'updatedAt' => $this->created_at->toISOString(),
         ];
     }
 }
