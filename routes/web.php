@@ -17,3 +17,8 @@ $router->get('/poems', [
     'uses' => 'PoemsController@index',
     'as' => 'poems.index',
 ]);
+
+$router->get('poems/{id}', [
+    'uses' => 'PoemsController@show',
+    'as' => 'poems.show',
+]);

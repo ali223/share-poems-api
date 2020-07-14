@@ -11,4 +11,11 @@ class PoemsController extends Controller
     {
         return PoemResource::collection(Poem::all());
     }
+
+    public function show($id)
+    {
+        $poem = Poem::findOrFail($id);
+
+        return new PoemResource($poem);
+    }
 }
