@@ -32,7 +32,7 @@ $factory->define(Poem::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'poet_name' => $faker->name,
         'content' => $faker->paragraphs(5, true),
-        'image_url' => $faker->imageUrl,
+        'image_url' => "https://picsum.photos/200/200?random={$faker->randomNumber}",
         'user_id' => factory(User::class)->create()->id,
     ];
 });
