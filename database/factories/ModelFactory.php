@@ -31,7 +31,7 @@ $factory->define(Poem::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'poet_name' => $faker->name,
-        'content' => $faker->paragraph,
+        'content' => $faker->paragraphs(5, true),
         'image_url' => $faker->imageUrl,
         'user_id' => factory(User::class)->create()->id,
     ];
