@@ -22,3 +22,9 @@ $router->get('poems/{id}', [
     'uses' => 'PoemsController@show',
     'as' => 'poems.show',
 ]);
+
+$router->post('user-registrations', [
+    'uses' => 'UserRegistrationsController@store',
+    'as' => 'user-registrations.store',
+]);
+
