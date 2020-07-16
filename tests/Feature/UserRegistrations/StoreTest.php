@@ -16,7 +16,7 @@ class StoreTest extends TestCase
             'name' => 'John Doe',
             'email' => 'johndoe@example.com',
             'password' => 'secret123',
-            'password_confirmation' => 'secret123',
+            'passwordConfirmation' => 'secret123',
         ];
 
         $this->post(route('user-registrations.store'), $registrationData)

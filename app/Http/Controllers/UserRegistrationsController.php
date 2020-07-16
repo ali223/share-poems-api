@@ -14,7 +14,8 @@ class UserRegistrationsController extends Controller
         $this->validate($request, [
             'name' => 'required|string|min:5',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:8|confirmed',
+            'password' => 'required|min:8|same:passwordConfirmation',
+            'passwordConfirmation' => 'required|min:8',
         ]);
 
         $user = new User;
