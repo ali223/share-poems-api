@@ -28,3 +28,8 @@ $router->post('user-registrations', [
     'as' => 'user-registrations.store',
 ]);
 
+$router->post('auth/login', [
+    'uses' => 'AuthController@login',
+    'as' => 'auth.login',
+]);
+
