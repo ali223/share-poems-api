@@ -33,3 +33,9 @@ $router->post('auth/login', [
     'as' => 'auth.login',
 ]);
 
+$router->get('my-profile', [
+    'uses' => 'MyProfileController@index',
+    'as' => 'my-profile.index',
+    'middleware' => 'jwt.auth',
+]);
+
