@@ -19,8 +19,14 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         try {
-            if (! $token = Auth::attempt($credentials)) {
-                return response()->json(['error' => 'invalid_credentials'], 401);
+            $token = Auth::attempt($credentials);
+
+            if (! $token) {
+                return response()->json([
+                    'error' => 'invalid_credentials',
+                    'email' => 'Invalid email or password',
+                    'password' => 'Invalid email or password',
+                ], 401);
             }
         } catch (JWTException $e) {
             return response()->json(['error' => 'could_not_create_token'], 500);
