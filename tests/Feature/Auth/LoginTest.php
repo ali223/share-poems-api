@@ -24,7 +24,7 @@ class LoginTest extends TestCase
             'password' => 'secret123',
         ])->assertStatus(200);
 
-        $this->assertEquals(true, auth()->check());
+        $this->assertTrue(auth()->check());
         $this->assertEquals($user->id, auth()->id());
     }
 
@@ -41,7 +41,6 @@ class LoginTest extends TestCase
             'password' => 'secret123.invalid',
         ])->assertStatus(401);
 
-        $this->assertEquals(false, auth()->check());
+        $this->assertFalse(auth()->check());
     }
-
 }
