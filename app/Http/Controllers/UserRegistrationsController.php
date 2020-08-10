@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -26,6 +25,14 @@ class UserRegistrationsController extends Controller
 
         $user->save();
 
-        return new UserResource($user);
+        $token = auth()->login($user);
+
+        return response()->json([
+            'user' => [
+                'id' => auth()->id(),
+                'name' => auth()->user()->name,
+                'token' => $token,
+            ]
+        ]);
     }
 }

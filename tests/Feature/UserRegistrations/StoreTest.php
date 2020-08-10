@@ -28,5 +28,11 @@ class StoreTest extends TestCase
             'name' => $registrationData['name'],
             'email' => $registrationData['email'],
         ]);
+
+        $this->assertTrue(auth()->check());
+        $this->assertEquals(
+            $registrationData['email'], 
+            auth()->user()->email
+        );
     }
 }
