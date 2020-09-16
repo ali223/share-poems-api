@@ -39,3 +39,8 @@ $router->get('my-profile', [
     'middleware' => 'jwt.auth',
 ]);
 
+$router->get('my-poems', [
+    'uses' => 'MyPoemsController@index',
+    'as' => 'my-poems.index',
+    'middleware' => 'jwt.auth',
+]);

@@ -49,5 +49,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     public function getJWTCustomClaims()
     {
         return [];
-    }    
+    }
+
+    public function poems()
+    {
+        return $this->hasMany(Poem::class);
+    }
 }
